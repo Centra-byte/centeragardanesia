@@ -1,84 +1,1021 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CENTERA GARDANESIA — Pusat Garis Depan Indonesia</title>
-<meta name="description" content="Website resmi CENTERA GARDANESIA — Pusat Garis Depan Indonesia.">
-<style>
-:root{--bg:#070707;--panel:#101010;--gold:#d6a52d;--gold2:#f3cf67;--white:#f5f5f2;--muted:#aaa}
-*{box-sizing:border-box;scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(circle at 80% 10%,#2a210d 0,transparent 30%),var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(115deg,transparent 0 48%,#fff 49%,transparent 50%);background-size:7px 7px}
-nav{position:sticky;top:0;z-index:20;background:rgba(7,7,7,.9);backdrop-filter:blur(12px);border-bottom:1px solid #3c2d0e}
-.navin{max-width:1150px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 22px}
-.brand{display:flex;gap:12px;align-items:center;font-weight:900;letter-spacing:2px}.brand img{width:48px;height:48px;object-fit:contain}
-.brand span b{color:var(--gold2)}.brand small{display:block;color:#999;letter-spacing:4px;font-size:9px;margin-top:3px}
-.links{display:flex;gap:24px}.links a{color:#ddd;text-decoration:none;font-size:13px;font-weight:700}.links a:hover{color:var(--gold2)}
-.hero{min-height:700px;display:grid;place-items:center;padding:80px 22px;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;width:650px;height:650px;border:1px solid #5a4311;border-radius:50%;right:-180px;top:50px;box-shadow:0 0 100px #5a431133}
-.hero-inner{max-width:1150px;width:100%;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;position:relative;z-index:1}
-.kicker{color:var(--gold2);letter-spacing:7px;font-size:13px;font-weight:800}.hero h1{font-size:clamp(54px,8vw,105px);line-height:.86;margin:18px 0;color:var(--gold2);letter-spacing:-5px;text-shadow:0 8px 30px #000}
-.hero h1 span{display:block;color:#eee;font-size:.48em;letter-spacing:8px;margin-top:18px}
-.hero p{max-width:620px;color:#bbb;font-size:18px;line-height:1.7}
-.quote{font-weight:700;color:#ddd;border-left:3px solid var(--gold);padding-left:16px}
-.btns{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}.btn{padding:14px 22px;border-radius:6px;text-decoration:none;font-weight:800;border:1px solid var(--gold);color:#090909;background:var(--gold2)}.btn.alt{background:transparent;color:var(--gold2)}
-.logo-card{min-height:430px;display:grid;place-items:center;border:1px solid #4b3811;border-radius:20px;background:linear-gradient(145deg,#151515,#090909);box-shadow:0 25px 80px #000;padding:35px}
-.logo-card img{max-width:100%;max-height:390px;filter:drop-shadow(0 0 25px #d6a52d55)}
-section{max-width:1150px;margin:auto;padding:85px 22px}.title{font-size:38px;margin:0 0 12px}.line{width:70px;height:3px;background:var(--gold);margin-bottom:28px}.lead{color:#aaa;line-height:1.8;max-width:760px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}.card{background:linear-gradient(145deg,#151515,#0b0b0b);border:1px solid #30240d;border-radius:15px;padding:25px}.card h3{color:var(--gold2);margin-top:0}.card p{color:#aaa;line-height:1.65}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}.stat{padding:22px;border:1px solid #3a2c10;border-radius:12px;text-align:center}.stat b{font-size:30px;color:var(--gold2);display:block}.stat span{color:#999;font-size:12px}
-.social{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.social a{display:block;padding:22px;border:1px solid #3a2c10;border-radius:12px;color:white;text-decoration:none;background:#0e0e0e}.social a:hover{border-color:var(--gold)}.social b{color:var(--gold2)}
-footer{border-top:1px solid #30240d;text-align:center;padding:40px 22px;color:#777}.motto{color:var(--gold2);letter-spacing:3px;font-weight:800}
-@media(max-width:800px){.links{display:none}.hero-inner{grid-template-columns:1fr}.logo-card{min-height:320px}.grid,.stats,.social{grid-template-columns:1fr}.hero{padding-top:55px}.hero h1{letter-spacing:-3px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CENTERA GARDANESIA</title>
+  <meta name="description" content="CENTERA GARDANESIA — Pusat Garis Depan Indonesia">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --black: #050505;
+      --dark: #0c0c0c;
+      --card: #111111;
+      --gold: #d6a536;
+      --gold-light: #f5d77a;
+      --white: #ffffff;
+      --gray: #a5a5a5;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      background: rgba(5,5,5,.88);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(214,165,54,.15);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo-symbol {
+      width: 43px;
+      height: 43px;
+      border: 2px solid var(--gold);
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      font-weight: 900;
+      font-size: 16px;
+      transform: rotate(45deg);
+    }
+
+    .logo-symbol span {
+      transform: rotate(-45deg);
+    }
+
+    .logo-text {
+      font-size: 17px;
+      line-height: 1.1;
+    }
+
+    .logo-text small {
+      display: block;
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .menu a {
+      color: #eee;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .menu a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-button {
+      text-decoration: none;
+      color: #111;
+      background: linear-gradient(135deg,var(--gold-light),var(--gold));
+      padding: 12px 18px;
+      border-radius: 4px;
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      padding: 140px 7% 70px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 30px;
+      overflow: hidden;
+      position: relative;
+      background:
+        radial-gradient(circle at 80% 45%, rgba(214,165,54,.16), transparent 35%),
+        linear-gradient(120deg,#050505,#0b0b0b);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border: 1px solid rgba(214,165,54,.12);
+      border-radius: 50%;
+      right: -250px;
+      top: 100px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: 13px;
+      letter-spacing: 4px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px,8vw,105px);
+      line-height: .9;
+      font-weight: 1000;
+      letter-spacing: -5px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero-description {
+      max-width: 540px;
+      margin: 28px 0;
+      color: #c9c9c9;
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 23px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 900;
+      border-radius: 4px;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg,var(--gold-light),var(--gold));
+      color: #111;
+    }
+
+    .btn-secondary {
+      color: white;
+      border: 1px solid #555;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .social {
+      margin-top: 35px;
+      display: flex;
+      gap: 25px;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    .social strong {
+      color: white;
+    }
+
+    /* PANDA VISUAL */
+    .hero-visual {
+      min-height: 520px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .gold-circle {
+      width: min(480px,90vw);
+      height: min(480px,90vw);
+      border-radius: 50%;
+      border: 1px solid rgba(214,165,54,.45);
+      box-shadow:
+        0 0 80px rgba(214,165,54,.13),
+        inset 0 0 60px rgba(214,165,54,.08);
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .panda {
+      font-size: clamp(170px,22vw,290px);
+      filter: drop-shadow(0 20px 30px #000);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .cg-badge {
+      position: absolute;
+      bottom: 35px;
+      right: 20px;
+      background: linear-gradient(135deg,var(--gold-light),var(--gold));
+      color: #111;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 1000;
+      font-size: 28px;
+      border: 6px solid #0a0a0a;
+      box-shadow: 0 0 30px rgba(214,165,54,.3);
+    }
+
+    /* SECTION */
+    section {
+      padding: 100px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title small {
+      color: var(--gold);
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px,5vw,55px);
+      margin-top: 8px;
+    }
+
+    .section-title h2 span {
+      color: var(--gold);
+    }
+
+    /* VALUES */
+    .values {
+      background: #080808;
+    }
+
+    .value-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(7,1fr);
+      gap: 12px;
+    }
+
+    .value-card {
+      background: linear-gradient(145deg,#151515,#0b0b0b);
+      border: 1px solid #292929;
+      padding: 28px 15px;
+      text-align: center;
+      border-radius: 12px;
+      transition: .35s;
+    }
+
+    .value-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 15px 40px rgba(214,165,54,.1);
+    }
+
+    .value-icon {
+      font-size: 31px;
+      margin-bottom: 13px;
+    }
+
+    .value-card h3 {
+      color: var(--gold-light);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .value-card p {
+      color: #999;
+      font-size: 11px;
+    }
+
+    /* ABOUT */
+    .about {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text small {
+      color: var(--gold);
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    .about-text h2 {
+      font-size: clamp(35px,5vw,60px);
+      line-height: 1;
+      margin: 12px 0 25px;
+    }
+
+    .about-text h2 span {
+      color: var(--gold);
+    }
+
+    .about-text p {
+      color: #aaa;
+      margin-bottom: 25px;
+    }
+
+    .about-image {
+      min-height: 360px;
+      border-radius: 18px;
+      border: 1px solid #333;
+      background:
+        linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.75)),
+        radial-gradient(circle at center,#806329,#171717 60%);
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-image::before {
+      content: "CENTERA";
+      font-size: clamp(50px,8vw,100px);
+      font-weight: 1000;
+      color: rgba(255,255,255,.05);
+      transform: rotate(-15deg);
+    }
+
+    .play {
+      position: absolute;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #111;
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+      padding-left: 4px;
+    }
+
+    /* STATS */
+    .stats {
+      max-width: 1100px;
+      margin: 70px auto 0;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 30px 15px;
+      border-right: 1px solid #292929;
+    }
+
+    .stat:last-child {
+      border: 0;
+    }
+
+    .stat h3 {
+      color: var(--gold-light);
+      font-size: 34px;
+    }
+
+    .stat p {
+      color: #999;
+      font-size: 12px;
+    }
+
+    /* GALLERY */
+    .gallery {
+      background: #080808;
+    }
+
+    .gallery-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .gallery-item {
+      height: 230px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg,#282828,#0b0b0b);
+      border: 1px solid #292929;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      transition: .3s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      border-color: var(--gold);
+    }
+
+    .gallery-item h3 {
+      position: relative;
+      z-index: 2;
+      font-size: 18px;
+    }
+
+    .gallery-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 30%,rgba(214,165,54,.25),transparent 45%);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 70px 7% 25px;
+      background: #050505;
+      border-top: 1px solid rgba(214,165,54,.2);
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
+      gap: 35px;
+    }
+
+    footer h3 {
+      margin-bottom: 18px;
+      font-size: 14px;
+      color: var(--gold-light);
+    }
+
+    footer p,
+    footer a {
+      color: #999;
+      font-size: 12px;
+      text-decoration: none;
+      display: block;
+      margin: 8px 0;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .footer-brand {
+      font-size: 25px;
+      font-weight: 1000;
+    }
+
+    .footer-brand span {
+      color: var(--gold);
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: 50px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #222;
+      text-align: center;
+      color: #666;
+      font-size: 11px;
+    }
+
+    /* MOBILE */
+    @media(max-width:900px) {
+      .menu {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 130px;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons,
+      .social {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        min-height: 400px;
+      }
+
+      .value-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid #292929;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:550px) {
+      .nav-container {
+        padding: 0 17px;
+      }
+
+      .nav-button {
+        display: none;
+      }
+
+      .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+        letter-spacing: -3px;
+      }
+
+      section {
+        padding: 70px 20px;
+      }
+
+      .value-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-text {
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<nav><div class="navin">
-<div class="brand"><img src="logo-centera-gold.png" alt="Logo CENTERA GARDANESIA"><span><b>CENTERA</b> GARDANESIA<small>PUSAT GARIS DEPAN INDONESIA</small></span></div>
-<div class="links"><a href="#tentang">TENTANG</a><a href="#filosofi">FILOSOFI</a><a href="#kegiatan">KEGIATAN</a><a href="#media">MEDIA</a></div>
-</div></nav>
 
-<header class="hero"><div class="hero-inner">
-<div>
-<div class="kicker">PUSAT GARIS DEPAN INDONESIA</div>
-<h1>CENTERA<span>GARDANESIA</span></h1>
-<p class="quote">Cendekia • Etis • Nasionalis • Tangguh • Empatik • Rabbani • Amanah</p>
-<p>Ruang digital untuk mengenalkan identitas, nilai, karya, dan perjalanan CENTERA GARDANESIA.</p>
-<div class="btns"><a class="btn" href="#tentang">KENALI KAMI</a><a class="btn alt" href="#media">MEDIA SOSIAL</a></div>
-</div>
-<div class="logo-card"><img src="logo-centera-gold.png" alt="Logo resmi CENTERA GARDANESIA"></div>
-</div></header>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
 
-<section id="tentang"><h2 class="title">Tentang Kami</h2><div class="line"></div>
-<p class="lead">CENTERA GARDANESIA adalah identitas yang membawa semangat kebersamaan, karakter, dan perjuangan generasi muda untuk terus belajar, bertumbuh, dan memberi manfaat.</p>
-<div class="grid">
-<div class="card"><h3>VISI</h3><p>Menjadi generasi yang cerdas, berakhlak, tangguh, dan bermanfaat bagi bangsa serta agama.</p></div>
-<div class="card"><h3>MISI</h3><p>Membangun karakter unggul, memperluas manfaat, dan menjaga semangat kebersamaan dalam setiap langkah.</p></div>
-<div class="card"><h3>NILAI</h3><p>Cendekia, Etis, Nasionalis, Tangguh, Empatik, Rabbani, dan Amanah.</p></div>
-</div>
-</section>
+      <div class="logo">
+        <div class="logo-symbol">
+          <span>CG</span>
+        </div>
 
-<section id="filosofi"><h2 class="title">Filosofi Logo</h2><div class="line"></div>
-<p class="lead">Logo resmi yang digunakan di website ini berasal dari gambar manual yang kamu berikan. Bentuknya dipertahankan sebagai identitas utama, lalu ditampilkan dalam nuansa emas agar selaras dengan tema website.</p>
-<div class="stats"><div class="stat"><b>CG</b><span>IDENTITAS</span></div><div class="stat"><b>GOLD</b><span>KEUNGGULAN</span></div><div class="stat"><b>7</b><span>NILAI CENTERA</span></div><div class="stat"><b>ID</b><span>INDONESIA</span></div></div>
-</section>
+        <div class="logo-text">
+          CENTERA
+          <small>GARDANESIA</small>
+        </div>
+      </div>
 
-<section id="kegiatan"><h2 class="title">Kegiatan & Karya</h2><div class="line"></div>
-<div class="grid">
-<div class="card"><h3>Dokumentasi</h3><p>Tempat untuk foto dan dokumentasi kegiatan CENTERA GARDANESIA.</p></div>
-<div class="card"><h3>Karya</h3><p>Tempat menampilkan desain, tulisan, video, dan karya kreatif.</p></div>
-<div class="card"><h3>Agenda</h3><p>Tempat mencatat kegiatan dan agenda yang akan datang.</p></div>
-</div>
-</section>
+      <ul class="menu">
+        <li><a href="#beranda">BERANDA</a></li>
+        <li><a href="#tentang">TENTANG</a></li>
+        <li><a href="#nilai">NILAI</a></li>
+        <li><a href="#galeri">GALERI</a></li>
+        <li><a href="#produk">PRODUK</a></li>
+        <li><a href="#kontak">KONTAK</a></li>
+      </ul>
 
-<section id="media"><h2 class="title">Ikuti Kami</h2><div class="line"></div>
-<div class="social">
-<a href="https://www.instagram.com/centera_gardanesia/" target="_blank" rel="noopener" aria-label="Instagram"><b>Instagram</b><br>@centera_gardanesia</a>
-<a href="https://www.tiktok.com/@centera.gardanesi" target="_blank" rel="noopener" aria-label="TikTok"><b>TikTok</b><br>@centera.gardanesi</a>
-</div>
-<p class="lead" style="margin-top:18px">Ikuti akun resmi CENTERA GARDANESIA di Instagram dan TikTok.</p>
-</section>
+      <a href="#kontak" class="nav-button">
+        GABUNG SEKARANG →
+      </a>
 
-<footer><div class="motto">BERGERAK DENGAN ILMU • BERDIRI DENGAN IMAN • BERJUANG DEMI INDONESIA</div><p>© 2026 CENTERA GARDANESIA. Identitas resmi.</p></footer>
-</body></html>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <header class="hero" id="beranda">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        PUSAT GARIS DEPAN INDONESIA
+      </div>
+
+      <h1>
+        CENTERA<br>
+        <span>GARDANESIA</span>
+      </h1>
+
+      <p class="hero-description">
+        Bersatu dalam nilai, bergerak dalam aksi,
+        menjadi generasi garis depan yang berkarakter
+        dan memberikan dampak positif.
+      </p>
+
+      <div class="buttons">
+        <a href="#tentang" class="btn btn-primary">
+          TENTANG KAMI →
+        </a>
+
+        <a href="#produk" class="btn btn-secondary">
+          LIHAT PRODUK →
+        </a>
+      </div>
+
+      <div class="social">
+        <span>♪ <strong>@centera.gardanesia</strong></span>
+        <span>◎ <strong>centera_gardanesia</strong></span>
+      </div>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+      <div class="gold-circle">
+
+        <!-- Sementara menggunakan emoji sebagai placeholder maskot -->
+        <div class="panda">🐼</div>
+
+        <div class="cg-badge">
+          CG
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- NILAI -->
+  <section class="values" id="nilai">
+
+    <div class="section-title">
+      <small>NILAI KAMI</small>
+      <h2>7 PRINSIP <span>CENTERA</span></h2>
+    </div>
+
+    <div class="value-grid">
+
+      <div class="value-card">
+        <div class="value-icon">📖</div>
+        <h3>CENDEKIA</h3>
+        <p>Berilmu luas, berpikir jernih, dan terus belajar.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">⚖️</div>
+        <h3>ETIS</h3>
+        <p>Bersikap jujur, adil, dan berpegang pada nilai kebaikan.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">🇮🇩</div>
+        <h3>NASIONALIS</h3>
+        <p>Cinta tanah air, bangga berbudaya, dan siap berkontribusi.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">🛡️</div>
+        <h3>TANGGUH</h3>
+        <p>Kuat dalam menghadapi tantangan dan pantang menyerah.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>EMPATIK</h3>
+        <p>Peka terhadap sesama dan hadir untuk memberi manfaat.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">☪️</div>
+        <h3>RABBANI</h3>
+        <p>Dekat dengan Allah dan berakhlak mulia.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">★</div>
+        <h3>AMANAH</h3>
+        <p>Dapat dipercaya, bertanggung jawab, dan menepati janji.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- TENTANG -->
+  <section id="tentang">
+
+    <div class="about">
+
+      <div class="about-text">
+
+        <small>TENTANG KAMI</small>
+
+        <h2>
+          KAMI ADALAH<br>
+          <span>CENTERA GARDANESIA</span>
+        </h2>
+
+        <p>
+          CENTERA GARDANESIA adalah wadah kolaborasi,
+          kreativitas, dan perjuangan generasi muda
+          yang ingin menjadi bagian dari perubahan.
+        </p>
+
+        <p>
+          Bersatu dalam nilai, bergerak dalam aksi,
+          dan memberikan manfaat bagi Indonesia.
+        </p>
+
+        <a href="#nilai" class="btn btn-primary">
+          SELENGKAPNYA →
+        </a>
+
+      </div>
+
+      <div class="about-image">
+        <div class="play">▶</div>
+      </div>
+
+    </div>
+
+
+    <!-- STATISTIK -->
+    <div class="stats">
+
+      <div class="stat">
+        <h3>250+</h3>
+        <p>Anggota Aktif</p>
+      </div>
+
+      <div class="stat">
+        <h3>12+</h3>
+        <p>Proyek Berjalan</p>
+      </div>
+
+      <div class="stat">
+        <h3>30+</h3>
+        <p>Prestasi Diraih</p>
+      </div>
+
+      <div class="stat">
+        <h3>100%</h3>
+        <p>Semangat Bergerak</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALERI -->
+  <section class="gallery" id="galeri">
+
+    <div class="section-title">
+      <small>DOKUMENTASI</small>
+      <h2>GALERI <span>KEGIATAN</span></h2>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <h3>Kebersamaan</h3>
+      </div>
+
+      <div class="gallery-item">
+        <h3>Perjuangan</h3>
+      </div>
+
+      <div class="gallery-item">
+        <h3>Pendidikan</h3>
+      </div>
+
+      <div class="gallery-item">
+        <h3>Petualangan</h3>
+      </div>
+
+      <div class="gallery-item">
+        <h3>Solidaritas</h3>
+      </div>
+
+      <div class="gallery-item">
+        <h3>GARDANESIA</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUK -->
+  <section id="produk">
+
+    <div class="section-title">
+      <small>CENTERA STORE</small>
+      <h2>PRODUK <span>KAMI</span></h2>
+    </div>
+
+    <div class="value-grid">
+
+      <div class="value-card">
+        <div class="value-icon">👕</div>
+        <h3>APPAREL</h3>
+        <p>Produk pakaian dengan identitas CENTERA.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">🎒</div>
+        <h3>AKSESORIS</h3>
+        <p>Aksesori untuk melengkapi gaya CENTERA.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">🔥</div>
+        <h3>LIFESTYLE</h3>
+        <p>Produk untuk mendukung semangat bergerak.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon">⚔️</div>
+        <h3>CUSTOM</h3>
+        <p>Desain khusus sesuai kebutuhan komunitas.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- KONTAK -->
+  <section id="kontak" style="background:#080808;">
+
+    <div class="section-title">
+      <small>HUBUNGI KAMI</small>
+      <h2>GABUNG BERSAMA <span>KAMI</span></h2>
+    </div>
+
+    <div style="max-width:700px;margin:auto;text-align:center;">
+
+      <p style="color:#aaa;margin-bottom:30px;">
+        Jadilah bagian dari generasi garis depan Indonesia.
+        Bersatu dalam nilai dan bergerak dalam aksi.
+      </p>
+
+      <div class="buttons" style="justify-content:center;">
+
+        <a
+          href="https://www.instagram.com/centera_gardanesia/"
+          target="_blank"
+          class="btn btn-primary">
+          INSTAGRAM
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@centera.gardanesia"
+          target="_blank"
+          class="btn btn-secondary">
+          TIKTOK
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand">
+          CENTERA <span>GARDANESIA</span>
+        </div>
+
+        <p>
+          Bersatu dalam nilai, bergerak dalam aksi,
+          menjadi generasi garis depan yang berkarakter
+          dan berdampak.
+        </p>
+      </div>
+
+      <div>
+        <h3>LINK CEPAT</h3>
+        <a href="#beranda">Beranda</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#nilai">Nilai</a>
+        <a href="#galeri">Galeri</a>
+      </div>
+
+      <div>
+        <h3>PRODUK</h3>
+        <a href="#produk">Apparel</a>
+        <a href="#produk">Aksesoris</a>
+        <a href="#produk">Lifestyle</a>
+        <a href="#produk">Custom</a>
+      </div>
+
+      <div>
+        <h3>SOCIAL MEDIA</h3>
+        <a href="https://www.instagram.com/centera_gardanesia/" target="_blank">
+          Instagram
+        </a>
+
+        <a href="https://www.tiktok.com/@centera.gardanesia" target="_blank">
+          TikTok
+        </a>
+      </div>
+
+      <div>
+        <h3>BERGABUNG</h3>
+
+        <p>
+          Jadilah bagian dari generasi
+          garis depan Indonesia.
+        </p>
+
+        <a href="#kontak" class="btn btn-primary">
+          GABUNG SEKARANG →
+        </a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 CENTERA GARDANESIA. All Rights Reserved.
+    </div>
+
+  </footer>
+
+</body>
+</html>
