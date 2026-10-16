@@ -1,745 +1,644 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>CENTERA GARDANESIA</title>
-
-  <meta name="description"
-    content="CENTERA GARDANESIA — Pusat Garis Depan Indonesia. Cendekia, Etis, Nasionalis, Tangguh, Empatik, Rabbani, Amanah.">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #070b0a;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    /* ================= HEADER ================= */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 16px 6%;
-      background: rgba(7, 11, 10, 0.75);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 21px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      color: #d6a84f;
-    }
-
-    .logo span {
-      color: white;
-    }
-
-    .menu {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
-
-    .menu a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      transition: .3s;
-    }
-
-    .menu a:hover {
-      color: #d6a84f;
-    }
-
-    .menu-btn {
-      display: none;
-      font-size: 27px;
-      cursor: pointer;
-    }
-
-    /* ================= HERO ================= */
-
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 110px 20px 60px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at center, rgba(214,168,79,.16), transparent 35%),
-        linear-gradient(180deg, #0b1210, #070b0a);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: rgba(214,168,79,.08);
-      filter: blur(100px);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 18px;
-      border: 1px solid rgba(214,168,79,.5);
-      border-radius: 30px;
-      color: #d6a84f;
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin-bottom: 22px;
-      background: rgba(214,168,79,.05);
-    }
-
-    .hero h1 {
-      font-size: clamp(50px, 10vw, 110px);
-      font-weight: 1000;
-      letter-spacing: 5px;
-      line-height: .95;
-      background: linear-gradient(90deg, #fff, #d6a84f, #fff);
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-bottom: 18px;
-    }
-
-    .hero h2 {
-      font-size: clamp(20px, 4vw, 36px);
-      letter-spacing: 5px;
-      color: #d6a84f;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 650px;
-      margin: auto;
-      color: #b9c0bc;
-      line-height: 1.8;
-      font-size: 16px;
-    }
-
-    .hero-buttons {
-      margin-top: 35px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 14px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: .3s;
-    }
-
-    .btn-primary {
-      background: #d6a84f;
-      color: #080b09;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(214,168,79,.25);
-    }
-
-    .btn-outline {
-      border: 1px solid #555;
-      color: white;
-    }
-
-    .btn-outline:hover {
-      border-color: #d6a84f;
-      color: #d6a84f;
-    }
-
-    /* ================= SECTION ================= */
-
-    section {
-      padding: 90px 6%;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-title small {
-      color: #d6a84f;
-      letter-spacing: 3px;
-      font-weight: bold;
-    }
-
-    .section-title h2 {
-      font-size: clamp(30px, 5vw, 48px);
-      margin-top: 10px;
-    }
-
-    .section-title p {
-      color: #9da5a0;
-      margin-top: 12px;
-    }
-
-    /* ================= ABOUT ================= */
-
-    .about {
-      background: #0a100e;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      align-items: center;
-    }
-
-    .about-card {
-      padding: 35px;
-      background: linear-gradient(145deg, #111916, #0b100e);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.2);
-    }
-
-    .about-card h3 {
-      color: #d6a84f;
-      margin-bottom: 15px;
-      font-size: 25px;
-    }
-
-    .about-card p {
-      color: #aeb7b1;
-      line-height: 1.8;
-    }
-
-    .meaning {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 12px;
-    }
-
-    .meaning-item {
-      padding: 18px;
-      border-radius: 15px;
-      background: rgba(214,168,79,.06);
-      border: 1px solid rgba(214,168,79,.15);
-    }
-
-    .meaning-item strong {
-      display: block;
-      color: #d6a84f;
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
-
-    .meaning-item span {
-      color: #c1c7c3;
-      font-size: 13px;
-    }
-
-    /* ================= VALUES ================= */
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 18px;
-    }
-
-    .value {
-      padding: 28px 20px;
-      text-align: center;
-      border-radius: 20px;
-      background: #0d1411;
-      border: 1px solid rgba(255,255,255,.07);
-      transition: .3s;
-    }
-
-    .value:hover {
-      transform: translateY(-7px);
-      border-color: rgba(214,168,79,.5);
-    }
-
-    .value-number {
-      color: #d6a84f;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-
-    .value h3 {
-      margin-bottom: 8px;
-    }
-
-    .value p {
-      color: #89938d;
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    /* ================= SOCIAL ================= */
-
-    .social {
-      background: #0a100e;
-      text-align: center;
-    }
-
-    .social-box {
-      max-width: 700px;
-      margin: auto;
-      padding: 45px 25px;
-      border-radius: 25px;
-      background: linear-gradient(145deg,#121a16,#0b100e);
-      border: 1px solid rgba(214,168,79,.2);
-    }
-
-    .social-box h2 {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
-
-    .social-box p {
-      color: #929b95;
-      margin-bottom: 28px;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .social-links a {
-      padding: 12px 20px;
-      border-radius: 25px;
-      text-decoration: none;
-      color: white;
-      background: #171f1b;
-      border: 1px solid #303832;
-      transition: .3s;
-    }
-
-    .social-links a:hover {
-      color: #d6a84f;
-      border-color: #d6a84f;
-    }
-
-    /* ================= FOOTER ================= */
-
-    footer {
-      padding: 30px 20px;
-      text-align: center;
-      background: #050807;
-      color: #69716c;
-      font-size: 13px;
-    }
-
-    footer strong {
-      color: #d6a84f;
-    }
-
-    /* ================= MOBILE ================= */
-
-    @media (max-width: 800px) {
-
-      .menu-btn {
-        display: block;
-      }
-
-      .menu {
-        position: absolute;
-        top: 70px;
-        right: 5%;
-        width: 220px;
-        padding: 20px;
-        border-radius: 18px;
-        background: rgba(10,15,13,.97);
-        border: 1px solid rgba(255,255,255,.1);
-        display: none;
-        flex-direction: column;
-        gap: 18px;
-      }
-
-      .menu.active {
-        display: flex;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .values-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      section {
-        padding: 70px 5%;
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      .hero {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      .hero h1 {
-        font-size: 52px;
-        letter-spacing: 2px;
-      }
-
-      .hero h2 {
-        font-size: 20px;
-        letter-spacing: 3px;
-      }
-
-      .hero p {
-        font-size: 14px;
-      }
-
-      .meaning {
-        grid-template-columns: 1fr;
-      }
-
-      .values-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-card {
-        padding: 25px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CENTERA GARDANESIA - Pusat Garis Depan Indonesia</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font: Montserrat & Rajdhani for bold metallic look -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#FFF2C6',
+                            300: '#F5D061',
+                            400: '#EAB308',
+                            500: '#D4AF37',
+                            600: '#AA7C11',
+                            700: '#855B00',
+                        },
+                        darkbg: '#0a0b0d',
+                        darkcard: '#121418',
+                        darkborder: '#23272f',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        heading: ['Rajdhani', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #08090b;
+            color: #e2e8f0;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Metallic Gold Gradient Text */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #FFF099 0%, #F3CA52 30%, #AA7C11 70%, #FFDF73 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Gold Outline & Metallic Glow */
+        .gold-border-glow {
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .gold-border-glow:hover {
+            border-color: rgba(245, 208, 97, 0.9);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+        }
+
+        /* Gold Gradient Button */
+        .btn-gold {
+            background: linear-gradient(135deg, #F3CA52 0%, #D4AF37 50%, #996D00 100%);
+            color: #08090b;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, #FFF099 0%, #F3CA52 50%, #B8860B 100%);
+            box-shadow: 0 0 20px rgba(243, 202, 82, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-gold-outline {
+            border: 1.5px solid #D4AF37;
+            color: #F3CA52;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold-outline:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: #FFF099;
+            color: #FFF099;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Custom Card Background Shader */
+        .card-dark-gradient {
+            background: linear-gradient(180deg, rgba(20, 23, 28, 0.9) 0%, rgba(12, 14, 17, 0.95) 100%);
+            backdrop-filter: blur(8px);
+        }
+
+        /* Background Smoke Effect Simulation */
+        .bg-hero-glow {
+            background: radial-gradient(circle at 75% 30%, rgba(184, 134, 11, 0.15) 0%, rgba(8, 9, 11, 0) 60%);
+        }
+
+        /* Modal Animation */
+        .modal-fade-in {
+            animation: fadeIn 0.25s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #08090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #332800;
+            border-radius: 4px;
+            border: 1px solid #D4AF37;
+        }
+    </style>
 </head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-gold-500 selection:text-black bg-hero-glow">
 
-<body>
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-40 bg-darkbg/90 backdrop-blur-md border-b border-gold-600/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-md border border-gold-500/60 bg-gradient-to-br from-black to-gold-900/50 flex items-center justify-center text-gold-400 font-bold text-xl shadow-[0_0_10px_rgba(212,175,55,0.3)] group-hover:scale-105 transition-transform">
+                    <i class="fa-solid font-heading">CG</i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-wider text-gold-gradient font-heading leading-tight">CENTERA</span>
+                    <span class="text-xs font-semibold tracking-widest text-gray-300 -mt-1">GARDANESIA</span>
+                </div>
+            </a>
 
-  <!-- HEADER -->
-  <header>
-    <nav>
-      <div class="logo">
-        CG<span>•</span>
-      </div>
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-bold tracking-widest uppercase">
+                <a href="#beranda" class="text-gold-400 border-b-2 border-gold-400 pb-1 transition-colors">BERANDA</a>
+                <a href="#tentang" class="text-gray-300 hover:text-gold-300 transition-colors">TENTANG</a>
+                <a href="#filosofi" onclick="openModal('modal-filosofi')" class="text-gray-300 hover:text-gold-300 transition-colors cursor-pointer">FILOSOFI</a>
+                <a href="#galeri" onclick="openModal('modal-galeri')" class="text-gray-300 hover:text-gold-300 transition-colors cursor-pointer">GALERI</a>
+                <a href="#media" class="text-gray-300 hover:text-gold-300 transition-colors">MEDIA</a>
+                <a href="#kontak" class="text-gray-300 hover:text-gold-300 transition-colors">KONTAK</a>
+            </nav>
 
-      <div class="menu-btn" onclick="toggleMenu()">
-        ☰
-      </div>
-
-      <ul class="menu" id="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#tentang">Tentang</a></li>
-        <li><a href="#nilai">Nilai</a></li>
-        <li><a href="#kontak">Media</a></li>
-      </ul>
-    </nav>
-  </header>
-
-
-  <!-- HERO -->
-  <main id="home">
-
-    <section class="hero">
-      <div class="hero-content">
-
-        <div class="badge">
-          PUSAT GARIS DEPAN INDONESIA
-        </div>
-
-        <h1>CENTERA</h1>
-
-        <h2>GARDANESIA</h2>
-
-        <p>
-          Generasi yang cendekia, etis, nasionalis, tangguh,
-          empatik, rabbani, dan amanah untuk menjadi
-          bagian dari garis depan masa depan Indonesia.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#tentang" class="btn btn-primary">
-            Jelajahi CENTERA
-          </a>
-
-          <a href="#kontak" class="btn btn-outline">
-            Media Sosial
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- TENTANG -->
-    <section class="about" id="tentang">
-      <div class="container">
-
-        <div class="section-title">
-          <small>TENTANG KAMI</small>
-          <h2>Siapa CENTERA?</h2>
-          <p>
-            Identitas, prinsip, dan semangat yang menjadi dasar
-            CENTERA GARDANESIA.
-          </p>
-        </div>
-
-        <div class="about-grid">
-
-          <div class="about-card">
-            <h3>CENTERA GARDANESIA</h3>
-
-            <p>
-              CENTERA GARDANESIA merupakan identitas yang membawa
-              semangat persatuan, ketangguhan, pendidikan,
-              kepemimpinan, dan kepedulian terhadap bangsa.
-            </p>
-
-            <br>
-
-            <p>
-              CENTERA memiliki semangat untuk menjadi generasi
-              yang mampu berdiri di garis depan dengan karakter
-              yang kuat dan prinsip yang baik.
-            </p>
-          </div>
-
-          <div class="about-card">
-
-            <h3>Makna CENTERA</h3>
-
-            <div class="meaning">
-
-              <div class="meaning-item">
-                <strong>C</strong>
-                <span>Cendekia</span>
-              </div>
-
-              <div class="meaning-item">
-                <strong>E</strong>
-                <span>Etis</span>
-              </div>
-
-              <div class="meaning-item">
-                <strong>N</strong>
-                <span>Nasionalis</span>
-              </div>
-
-              <div class="meaning-item">
-                <strong>T</strong>
-                <span>Tangguh</span>
-              </div>
-
-              <div class="meaning-item">
-                <strong>E</strong>
-                <span>Empatik</span>
-              </div>
-
-              <div class="meaning-item">
-                <strong>R</strong>
-                <span>Rabbani</span>
-              </div>
-
-              <div class="meaning-item">
-                <strong>A</strong>
-                <span>Amanah</span>
-              </div>
-
+            <!-- CTA Join Us Button -->
+            <div class="hidden md:block">
+                <button onclick="openModal('modal-join')" class="btn-gold-outline px-6 py-2 rounded.md font-bold text-xs uppercase tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-user-plus text-xs"></i> JOIN US
+                </button>
             </div>
 
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- NILAI -->
-    <section id="nilai">
-
-      <div class="container">
-
-        <div class="section-title">
-          <small>NILAI UTAMA</small>
-          <h2>7 Karakter CENTERA</h2>
-          <p>
-            Prinsip yang menjadi fondasi CENTERA GARDANESIA.
-          </p>
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gold-400 focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
         </div>
 
-        <div class="values-grid">
-
-          <div class="value">
-            <div class="value-number">01</div>
-            <h3>Cendekia</h3>
-            <p>
-              Mengutamakan ilmu, pemikiran, dan wawasan.
-            </p>
-          </div>
-
-          <div class="value">
-            <div class="value-number">02</div>
-            <h3>Etis</h3>
-            <p>
-              Menjunjung sikap dan perilaku yang baik.
-            </p>
-          </div>
-
-          <div class="value">
-            <div class="value-number">03</div>
-            <h3>Nasionalis</h3>
-            <p>
-              Memiliki semangat cinta bangsa dan Indonesia.
-            </p>
-          </div>
-
-          <div class="value">
-            <div class="value-number">04</div>
-            <h3>Tangguh</h3>
-            <p>
-              Tidak mudah menyerah menghadapi tantangan.
-            </p>
-          </div>
-
-          <div class="value">
-            <div class="value-number">05</div>
-            <h3>Empatik</h3>
-            <p>
-              Peduli terhadap sesama dan lingkungan.
-            </p>
-          </div>
-
-          <div class="value">
-            <div class="value-number">06</div>
-            <h3>Rabbani</h3>
-            <p>
-              Menjadikan nilai keimanan sebagai pedoman.
-            </p>
-          </div>
-
-          <div class="value">
-            <div class="value-number">07</div>
-            <h3>Amanah</h3>
-            <p>
-              Dapat dipercaya dan bertanggung jawab.
-            </p>
-          </div>
-
-          <div class="value">
-            <div class="value-number">CG</div>
-            <h3>GARDANESIA</h3>
-            <p>
-              Semangat berdiri di garis depan Indonesia.
-            </p>
-          </div>
-
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darkcard border-b border-gold-600/30 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" class="block text-gold-400 font-semibold py-2">BERANDA</a>
+            <a href="#tentang" class="block text-gray-300 hover:text-gold-300 py-2">TENTANG</a>
+            <a href="#filosofi" onclick="openModal('modal-filosofi')" class="block text-gray-300 hover:text-gold-300 py-2">FILOSOFI</a>
+            <a href="#galeri" onclick="openModal('modal-galeri')" class="block text-gray-300 hover:text-gold-300 py-2">GALERI</a>
+            <a href="#media" class="block text-gray-300 hover:text-gold-300 py-2">MEDIA</a>
+            <a href="#kontak" class="block text-gray-300 hover:text-gold-300 py-2">KONTAK</a>
+            <button onclick="openModal('modal-join')" class="w-full btn-gold py-2 rounded-md font-bold text-xs uppercase mt-2">
+                JOIN US
+            </button>
         </div>
+    </header>
 
-      </div>
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full space-y-10">
 
-    </section>
+        <!-- HERO SECTION -->
+        <section id="beranda" class="relative rounded-2xl overflow-hidden p-6 sm:p-10 card-dark-gradient gold-border-glow">
+            
+            <!-- Dynamic Background elements -->
+            <div class="absolute -right-20 -top-20 w-96 h-96 bg-gold-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Left Hero Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left z-10">
+                    <p class="text-xs sm:text-sm font-bold tracking-[0.3em] text-gold-400 uppercase">
+                        PUSAT GARIS DEPAN INDONESIA
+                    </p>
+                    
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading tracking-tight leading-none text-gold-gradient drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
+                        CENTERA<br/>
+                        <span class="flex items-center justify-center lg:justify-start gap-3">
+                            <span class="inline-block w-8 sm:w-16 h-1 bg-gold-500 rounded"></span>
+                            GARDANESIA
+                            <span class="inline-block w-8 sm:w-16 h-1 bg-gold-500 rounded"></span>
+                        </span>
+                    </h1>
 
-    <!-- SOCIAL -->
-    <section class="social" id="kontak">
+                    <p class="text-sm sm:text-base italic text-gold-100/90 font-medium max-w-2xl mx-auto lg:mx-0 border-l-2 border-gold-500/50 pl-4 py-1">
+                        “Cendekia, Etis, Nasionalis, Tangguh, Empatik, Rabbani, Amanah”
+                    </p>
 
-      <div class="container">
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#tentang" class="btn-gold px-7 py-3 rounded-lg text-sm font-bold flex items-center gap-2 group">
+                            TENTANG KAMI <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <button onclick="openModal('modal-video')" class="btn-gold-outline px-7 py-3 rounded-lg text-sm font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-play text-xs text-gold-400"></i> LIHAT VIDEO
+                        </button>
+                    </div>
+                </div>
 
-        <div class="social-box">
+                <!-- Right Hero Character Illustration / Banner Visual -->
+                <div class="lg:col-span-5 relative flex justify-center items-center">
+                    <div class="relative w-full max-w-md aspect-square rounded-2xl overflow-hidden border border-gold-500/30 shadow-[0_10px_30px_rgba(0,0,0,0.8)] group">
+                        
+                        <!-- Mascot Image placeholder with SVG warrior theme -->
+                        <div class="w-full h-full bg-gradient-to-t from-black via-zinc-900 to-amber-950 flex flex-col items-center justify-center relative p-6 text-center">
+                            <!-- Background Flag Overlay -->
+                            <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=800');"></div>
+                            
+                            <!-- Mascot Illustration / Shield Graphic -->
+                            <div class="relative z-10 my-auto flex flex-col items-center">
+                                <div class="w-40 h-40 sm:w-48 sm:h-48 rounded-full border-2 border-gold-400/80 p-2 shadow-[0_0_25px_rgba(212,175,55,0.4)] bg-black/60 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-500">
+                                    <svg class="w-28 h-28 text-gold-400 drop-shadow-[0_0_10px_rgba(245,208,97,0.8)]" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-5.45 8-12V5l-8-3zm0 4a3 3 0 0 1 3 3c0 1.3-.83 2.4-2 2.82V15h-2v-3.18A3.001 3.001 0 0 1 12 6z"/>
+                                    </svg>
+                                </div>
+                                
+                                <span class="bg-gold-500/20 border border-gold-400 text-gold-300 font-heading font-extrabold px-4 py-1 rounded-full text-xs tracking-widest uppercase">
+                                    PANDU GUARD MASCOT
+                                </span>
+                            </div>
 
-          <h2>Ikuti CENTERA</h2>
+                            <!-- Bottom Golden Crest Overlay -->
+                            <div class="absolute bottom-3 right-3 bg-black/80 border border-gold-500/60 p-2 rounded-lg flex items-center gap-2 shadow-lg">
+                                <i class="fa-solid fa-shield-halved text-gold-400 text-lg"></i>
+                                <span class="text-[10px] font-bold tracking-wider text-gold-200 uppercase">CG OFFICIAL</span>
+                            </div>
+                        </div>
 
-          <p>
-            Temukan aktivitas dan informasi terbaru
-            CENTERA GARDANESIA.
-          </p>
+                    </div>
+                </div>
 
-          <div class="social-links">
+            </div>
+        </section>
 
-            <a href="https://www.instagram.com/centera_gardanesia/"
-               target="_blank">
-              Instagram
-            </a>
+        <!-- PILLARS / FEATURE GRID (VISI, MISI, BERSATU, TUJUAN) -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <!-- VISI -->
+            <div class="card-dark-gradient rounded-xl p-5 border border-gold-600/30 hover:border-gold-400 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-black transition-colors shrink-0">
+                        <i class="fa-solid fa-bullseye text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-gold-300 tracking-wider">VISI</h3>
+                        <p class="text-xs text-gray-300 mt-1 leading-relaxed">
+                            Menjadi generasi garis depan yang cerdas, berakhlak, kuat, dan bermanfaat bagi bangsa dan agama.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-            <a href="https://www.tiktok.com/@centera.gardanesi"
-               target="_blank">
-              TikTok
-            </a>
+            <!-- MISI -->
+            <div class="card-dark-gradient rounded-xl p-5 border border-gold-600/30 hover:border-gold-400 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-black transition-colors shrink-0">
+                        <i class="fa-solid fa-flag text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-gold-300 tracking-wider">MISI</h3>
+                        <p class="text-xs text-gray-300 mt-1 leading-relaxed">
+                            Membangun karakter unggul, memperluas manfaat, dan menjadi teladan di setiap langkah perjuangan.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-          </div>
+            <!-- BERSATU -->
+            <div class="card-dark-gradient rounded-xl p-5 border border-gold-600/30 hover:border-gold-400 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-black transition-colors shrink-0">
+                        <i class="fa-solid fa-users text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-gold-300 tracking-wider">BERSATU</h3>
+                        <p class="text-xs text-gray-300 mt-1 leading-relaxed">
+                            Bersama kita kuat, bergerak kita hebat, bermanfaat kita berarti.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- TUJUAN -->
+            <div class="card-dark-gradient rounded-xl p-5 border border-gold-600/30 hover:border-gold-400 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-lg bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-black transition-colors shrink-0">
+                        <i class="fa-solid fa-shield-heart text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-gold-300 tracking-wider">TUJUAN</h3>
+                        <p class="text-xs text-gray-300 mt-1 leading-relaxed">
+                            Mengabdi untuk Indonesia, membela kebenaran, dan menebar kebaikan tanpa batas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- INTERACTIVE CARDS ROW (4 CARDS) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- CARD 1: TENTANG KAMI -->
+            <div id="tentang" class="card-dark-gradient rounded-xl border border-gold-600/30 overflow-hidden flex flex-col justify-between p-5 relative group hover:border-gold-400 transition-all">
+                <div class="absolute inset-0 opacity-15 bg-cover bg-center -z-0 group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=600');"></div>
+                <div class="relative z-10 space-y-3">
+                    <h4 class="font-heading text-xl font-bold text-gold-300 uppercase border-b border-gold-500/30 pb-2">
+                        TENTANG KAMI
+                    </h4>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        <span class="font-bold text-gold-400">CENTERA GARDANESIA</span> adalah identitas kebersamaan yang lahir dari semangat perjuangan, persaudaraan, dan tekad menjadi generasi terbaik, sebagai pusat garis depan Indonesia.
+                    </p>
+                </div>
+                <div class="pt-6 relative z-10">
+                    <button onclick="openModal('modal-tentang')" class="w-full btn-gold-outline py-2 text-xs font-bold rounded flex items-center justify-center gap-2">
+                        SELENGKAPNYA <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD 2: FILOSOFI LOGO -->
+            <div class="card-dark-gradient rounded-xl border border-gold-600/30 overflow-hidden flex flex-col justify-between p-5 relative text-center group hover:border-gold-400 transition-all">
+                <div class="space-y-3 flex flex-col items-center">
+                    <h4 class="font-heading text-xl font-bold text-gold-300 uppercase border-b border-gold-500/30 pb-2 w-full">
+                        FILOSOFI LOGO
+                    </h4>
+                    
+                    <!-- CG Shield Graphic -->
+                    <div class="my-2 w-20 h-24 rounded-lg border-2 border-gold-400 bg-black/80 flex flex-col items-center justify-center text-gold-400 shadow-[0_0_15px_rgba(212,175,55,0.2)] group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-crown text-xs text-gold-300 mb-1"></i>
+                        <span class="font-heading text-2xl font-extrabold tracking-widest">CG</span>
+                    </div>
+                </div>
+                <div class="pt-6">
+                    <button onclick="openModal('modal-filosofi')" class="w-full btn-gold-outline py-2 text-xs font-bold rounded flex items-center justify-center gap-2">
+                        LIHAT MAKNA <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD 3: GALERI KEGIATAN -->
+            <div class="card-dark-gradient rounded-xl border border-gold-600/30 overflow-hidden flex flex-col justify-between p-5 relative group hover:border-gold-400 transition-all">
+                <div class="space-y-3">
+                    <h4 class="font-heading text-xl font-bold text-gold-300 uppercase border-b border-gold-500/30 pb-2">
+                        GALERI KEGIATAN
+                    </h4>
+                    <div class="relative h-24 rounded-lg overflow-hidden border border-gold-500/20">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=600" alt="Galeri" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-2">
+                            <span class="text-[10px] font-bold text-gold-200"><i class="fa-solid fa-camera mr-1"></i> Dokumentasi Anggota</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4">
+                    <button onclick="openModal('modal-galeri')" class="w-full btn-gold-outline py-2 text-xs font-bold rounded flex items-center justify-center gap-2">
+                        LIHAT GALERI <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD 4: IKUTI KAMI (SOCIAL MEDIA) -->
+            <div class="card-dark-gradient rounded-xl border border-gold-600/30 overflow-hidden flex flex-col justify-between p-5 hover:border-gold-400 transition-all">
+                <div class="space-y-3">
+                    <h4 class="font-heading text-xl font-bold text-gold-300 uppercase border-b border-gold-500/30 pb-2">
+                        IKUTI KAMI
+                    </h4>
+                    <div class="space-y-2">
+                        <!-- Instagram -->
+                        <a href="https://instagram.com" target="_blank" class="flex items-center justify-between p-2 rounded-lg bg-black/50 border border-gold-600/20 hover:border-gold-400 hover:bg-gold-500/10 transition-all text-xs">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-brands fa-instagram text-pink-500 text-base"></i>
+                                <div class="flex flex-col text-left">
+                                    <span class="font-bold text-gray-200">Instagram</span>
+                                    <span class="text-[10px] text-gray-400">@centera.gardanesia</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-[10px] text-gold-400"></i>
+                        </a>
+
+                        <!-- TikTok -->
+                        <a href="https://tiktok.com" target="_blank" class="flex items-center justify-between p-2 rounded-lg bg-black/50 border border-gold-600/20 hover:border-gold-400 hover:bg-gold-500/10 transition-all text-xs">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-brands fa-tiktok text-cyan-400 text-base"></i>
+                                <div class="flex flex-col text-left">
+                                    <span class="font-bold text-gray-200">TikTok</span>
+                                    <span class="text-[10px] text-gray-400">@centera.gardanesia</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-[10px] text-gold-400"></i>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="https://youtube.com" target="_blank" class="flex items-center justify-between p-2 rounded-lg bg-black/50 border border-gold-600/20 hover:border-gold-400 hover:bg-gold-500/10 transition-all text-xs">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-brands fa-youtube text-red-500 text-base"></i>
+                                <div class="flex flex-col text-left">
+                                    <span class="font-bold text-gray-200">YouTube</span>
+                                    <span class="text-[10px] text-gray-400">CENTERA GARDANESIA</span>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-[10px] text-gold-400"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER BANNER & SLOGAN -->
+    <footer class="mt-12 border-t border-gold-600/40 bg-black/90 py-6 text-center relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-xs sm:text-sm font-bold tracking-widest text-gold-gradient uppercase flex items-center justify-center gap-2">
+                <span>✦</span>
+                “BERGERAK DENGAN ILMU, BERDIRI DENGAN IMAN, BERJUANG DEMI INDONESIA”
+                <span>✦</span>
+            </p>
+            <p class="text-[10px] text-gray-500 mt-3">
+                &copy; 2026 CENTERA GARDANESIA. Hak Cipta Dilindungi Undang-Undang.
+            </p>
         </div>
+    </footer>
 
-      </div>
+    <!-- MODALS SECTION -->
 
-    </section>
+    <!-- MODAL 1: JOIN US -->
+    <div id="modal-join" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="card-dark-gradient border border-gold-400 rounded-2xl max-w-md w-full p-6 modal-fade-in relative shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+            <button onclick="closeModal('modal-join')" class="absolute top-4 right-4 text-gray-400 hover:text-gold-400 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-heading font-bold text-gold-gradient mb-2">GABUNG CENTERA GARDANESIA</h3>
+            <p class="text-xs text-gray-300 mb-6">Isi formulir singkat ini untuk menjadi bagian dari pergerakan garis depan.</p>
+            
+            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gold-300 uppercase mb-1">Nama Lengkap</label>
+                    <input type="text" required placeholder="Masukkan nama Anda" class="w-full bg-black/60 border border-gold-600/40 rounded-lg px-3 py-2 text-sm text-gray-200 focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gold-300 uppercase mb-1">Nomor WhatsApp</label>
+                    <input type="tel" required placeholder="08xxxxxxxxxx" class="w-full bg-black/60 border border-gold-600/40 rounded-lg px-3 py-2 text-sm text-gray-200 focus:outline-none focus:border-gold-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gold-300 uppercase mb-1">Kota / Domisili</label>
+                    <input type="text" required placeholder="Asal Kota" class="w-full bg-black/60 border border-gold-600/40 rounded-lg px-3 py-2 text-sm text-gray-200 focus:outline-none focus:border-gold-400">
+                </div>
+                <button type="submit" class="w-full btn-gold py-3 rounded-lg font-bold text-xs uppercase tracking-wider mt-4">
+                    KIRIM PENDAFTARAN
+                </button>
+            </form>
+        </div>
+    </div>
 
-  </main>
+    <!-- MODAL 2: LIHAT VIDEO -->
+    <div id="modal-video" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="max-w-3xl w-full bg-black border border-gold-500/50 rounded-2xl overflow-hidden modal-fade-in relative shadow-[0_0_40px_rgba(212,175,55,0.25)]">
+            <div class="p-4 border-b border-gold-600/30 flex justify-between items-center bg-darkcard">
+                <h3 class="font-heading font-bold text-gold-300"><i class="fa-solid fa-film mr-2"></i> VIDEO PROFIL CENTERA GARDANESIA</h3>
+                <button onclick="closeModal('modal-video')" class="text-gray-400 hover:text-gold-400 text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="aspect-video w-full bg-zinc-950 flex flex-col items-center justify-center p-6 text-center">
+                <i class="fa-regular fa-circle-play text-6xl text-gold-400 mb-4 animate-pulse"></i>
+                <p class="text-gold-200 font-bold text-sm">Video Perkenalan Centera Gardanesia</p>
+                <p class="text-xs text-gray-400 mt-2 max-w-md">Simulasi pemutar video profil pergerakan generasi muda Indonesia.</p>
+            </div>
+        </div>
+    </div>
 
+    <!-- MODAL 3: FILOSOFI LOGO -->
+    <div id="modal-filosofi" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="card-dark-gradient border border-gold-400 rounded-2xl max-w-lg w-full p-6 modal-fade-in relative">
+            <button onclick="closeModal('modal-filosofi')" class="absolute top-4 right-4 text-gray-400 hover:text-gold-400 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-heading font-bold text-gold-gradient mb-4">MAKNA FILOSOFI LOGO CG</h3>
+            
+            <div class="space-y-4 text-xs text-gray-300 leading-relaxed">
+                <div class="p-3 border border-gold-600/30 rounded-lg bg-black/40 flex items-start gap-3">
+                    <i class="fa-solid fa-crown text-gold-400 text-lg mt-1"></i>
+                    <div>
+                        <strong class="text-gold-300 block text-sm">Mahkota Emas</strong>
+                        Melambangkan kemuliaan akhlak, kepemimpinan, dan cita-cita luhur generasi masa depan.
+                    </div>
+                </div>
+                <div class="p-3 border border-gold-600/30 rounded-lg bg-black/40 flex items-start gap-3">
+                    <i class="fa-solid fa-shield text-gold-400 text-lg mt-1"></i>
+                    <div>
+                        <strong class="text-gold-300 block text-sm">Perisai Gagah</strong>
+                        Simbol ketahanan, ketangguhan mental, dan penjaga nilai-nilai kebaikan bangsa Indonesia.
+                    </div>
+                </div>
+                <div class="p-3 border border-gold-600/30 rounded-lg bg-black/40 flex items-start gap-3">
+                    <i class="fa-solid fa-font text-gold-400 text-lg mt-1"></i>
+                    <div>
+                        <strong class="text-gold-300 block text-sm">Inisial CG</strong>
+                        Singkatan dari Centera Gardanesia, persatuan garis depan generasi yang cerdas dan beriman.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 <strong>CENTERA GARDANESIA</strong>.
-    All Rights Reserved.
-  </footer>
+    <!-- MODAL 4: GALERI -->
+    <div id="modal-galeri" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="card-dark-gradient border border-gold-400 rounded-2xl max-w-3xl w-full p-6 modal-fade-in relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal-galeri')" class="absolute top-4 right-4 text-gray-400 hover:text-gold-400 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-heading font-bold text-gold-gradient mb-4">DOKUMENTASI KEGIATAN</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="rounded-lg overflow-hidden border border-gold-600/30 group">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=600" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" alt="Kegiatan 1">
+                    <div class="p-2 bg-black/80 text-[11px] font-bold text-gold-300">Konsolidasi Anggota & Diskusi Kebangsaan</div>
+                </div>
+                <div class="rounded-lg overflow-hidden border border-gold-600/30 group">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=600" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" alt="Kegiatan 2">
+                    <div class="p-2 bg-black/80 text-[11px] font-bold text-gold-300">Aksi Sosial Bagi Masyarakat</div>
+                </div>
+                <div class="rounded-lg overflow-hidden border border-gold-600/30 group">
+                    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=600" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" alt="Kegiatan 3">
+                    <div class="p-2 bg-black/80 text-[11px] font-bold text-gold-300">Pelatihan Kepemimpinan Muda</div>
+                </div>
+                <div class="rounded-lg overflow-hidden border border-gold-600/30 group">
+                    <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=600" class="w-full h-40 object-cover group-hover:scale-105 transition-transform" alt="Kegiatan 4">
+                    <div class="p-2 bg-black/80 text-[11px] font-bold text-gold-300">Upacara Kebangsaan & Deklarasi</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- MODAL 5: TENTANG KAMI DETAIL -->
+    <div id="modal-tentang" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="card-dark-gradient border border-gold-400 rounded-2xl max-w-lg w-full p-6 modal-fade-in relative">
+            <button onclick="closeModal('modal-tentang')" class="absolute top-4 right-4 text-gray-400 hover:text-gold-400 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-heading font-bold text-gold-gradient mb-4">TENTANG CENTERA GARDANESIA</h3>
+            <div class="space-y-3 text-xs text-gray-300 leading-relaxed">
+                <p>
+                    <strong>CENTERA GARDANESIA</strong> berdiri sebagai wadah perjuangan generasi muda yang berkomitmen tinggi untuk membawa perubahan positif bagi Indonesia.
+                </p>
+                <p>
+                    Nama <strong>CENTERA</strong> melambangkan pusat pergerakan dan cahaya penuntun, sedangkan <strong>GARDANESIA</strong> bermakna benteng serta garda terdepan pelindung nilai-nilai kebangsaan.
+                </p>
+                <p>
+                    Kami bergerak berlandaskan 7 pilar utama: <em>Cendekia, Etis, Nasionalis, Tangguh, Empatik, Rabbani, dan Amanah</em>.
+                </p>
+            </div>
+        </div>
+    </div>
 
-  <!-- JAVASCRIPT -->
-  <script>
+    <!-- NOTIFICATION BOX (Toast substitute) -->
+    <div id="toast-message" class="fixed bottom-5 right-5 bg-gold-500 text-black px-5 py-3 rounded-xl font-bold text-xs shadow-2xl hidden z-50 flex items-center gap-2">
+        <i class="fa-solid fa-circle-check"></i> <span id="toast-text">Pendaftaran Berhasil!</span>
+    </div>
 
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("active");
-    }
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    document.querySelectorAll(".menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        document.getElementById("menu").classList.remove("active");
-      });
-    });
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-  </script>
+        // Modal Open / Close Logic
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if(modal) {
+                modal.classList.remove('hidden');
+            }
+        }
 
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if(modal) {
+                modal.classList.add('hidden');
+            }
+        }
+
+        // Close modal when clicking outside box
+        window.onclick = function(event) {
+            const modals = ['modal-join', 'modal-video', 'modal-filosofi', 'modal-galeri', 'modal-tentang'];
+            modals.forEach(id => {
+                const modal = document.getElementById(id);
+                if (event.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+        }
+
+        // Handle Form Submit
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            closeModal('modal-join');
+            showToast('Terima kasih! Pendaftaran Anda berhasil dikirim.');
+        }
+
+        // Show Toast Notification
+        function showToast(text) {
+            const toast = document.getElementById('toast-message');
+            const toastText = document.getElementById('toast-text');
+            toastText.textContent = text;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+    </script>
 </body>
 </html>
+```
